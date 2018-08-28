@@ -1,0 +1,37 @@
+{
+  "name": "day-cli",
+  "version": "0.0.1",
+  "description": "The Command Line Interface that helps day calculation",
+  "main": "./lib/app.js",
+  "bin": {
+    "day": "bin/day.js"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JonJee/day-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "command",
+    "cli",
+    "day",
+    "date",
+    "dday",
+    "dayofweek"
+  ],
+  "author": "Jon Jee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JonJee/day-cli/issues"
+  },
+  "homepage": "https://github.com/JonJee/day-cli#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.17.1",
+    "moment": "^2.22.2"
+  }
+}
