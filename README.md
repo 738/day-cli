@@ -28,5 +28,23 @@ $ day -w 2018-08-28
 화요일
 ```
 
+### D-Day (TBD)
+
+#### Save D-Day
+```bash
+$ day -s "My CS Exam" "20181108"
+My CS Exam : D - 70
+$ day -s "Mom Birthday" "20181018"
+Mom Birthday : D - 49
+```
+
+#### View D-Day
+```bash
+$ day -d
+Mom Birthday : D - 49
+My CS Exam : D - 70
+```
+
+
 ## License
 MIT
