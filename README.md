@@ -32,9 +32,9 @@ $ day -w 2018-08-28
 
 #### Save D-Day
 ```bash
-$ day -s "My CS Exam" "20181108"
+$ day -s "20181108/My CS Exam"
 My CS Exam : D - 70
-$ day -s "Mom Birthday" "20181018"
+$ day -s "20181018/Mom Birthday"
 Mom Birthday : D - 49
 ```
 
