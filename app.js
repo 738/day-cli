@@ -66,13 +66,25 @@ exports.daycli = function () {
         fs.readFile(DDAY_FILE, function (error, data) {
             if (error) console.error(error);
             else {
-                console.log(data.toString());
+                data.toString().split('\n').forEach(line => {
+                    let [label, dueDate] = line.split(SEPARATOR);
+                    console.log(getLogString(label, dueDate))
+                });
             }
         });
     } else if (program.save) {
         let [dueDate, label] = program.save.split(SEPARATOR);
-        fs.appendFile(DDAY_FILE, dueDate + ' ' + label + '\n', 'utf-8', function (error) {
+        let dday = moment(dueDate).diff(moment(new Date()), 'days');
+        let dataString = label + SEPARATOR + dueDate;
+        let logString = getLogString(label, dueDate);
+        fs.appendFile(DDAY_FILE, dataString + '\n', 'utf-8', function (error) {
             if (error) console.error(error);
+            console.log(logString);
         });
+    }
+
+    function getLogString(label, dueDate) {
+        let dday = moment(dueDate).diff(moment(new Date()), 'days');
+        return label + ' : ' + 'D' + (dday >= 0 ? ' - ' + dday : ' + ' + (-dday));
     }
 };
