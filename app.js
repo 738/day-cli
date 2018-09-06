@@ -68,13 +68,12 @@ exports.daycli = function () {
             else {
                 data.toString().split('\n').forEach(line => {
                     let [label, dueDate] = line.split(SEPARATOR);
-                    console.log(getLogString(label, dueDate))
+                    if (label && dueDate) console.log(getLogString(label, dueDate))
                 });
             }
         });
     } else if (program.save) {
         let [dueDate, label] = program.save.split(SEPARATOR);
-        let dday = moment(dueDate).diff(moment(new Date()), 'days');
         let dataString = label + SEPARATOR + dueDate;
         let logString = getLogString(label, dueDate);
         fs.appendFile(DDAY_FILE, dataString + '\n', 'utf-8', function (error) {
