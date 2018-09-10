@@ -28,7 +28,7 @@ $ day -w 2018-08-28
 화요일
 ```
 
-### D-Day (TBD)
+### D-Day
 
 #### Save D-Day
 ```bash
